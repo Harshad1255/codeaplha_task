@@ -1,54 +1,50 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
-  text-align: center;
-  margin: 0;
-  padding: 0;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+  background: #f0f0f0;
 }
 
-.gallery-container {
-  max-width: 700px;
-  margin: 50px auto;
-  background: white;
+.calculator {
+  background: #222;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 260px;
 }
 
-.image-viewer {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.image-viewer img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
-.image-viewer button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0,0,0,0.5);
-  color: white;
-  border: none;
-  padding: 10px 16px;
+#display {
+  width: 100%;
+  height: 50px;
   font-size: 24px;
+  margin-bottom: 10px;
+  padding: 5px;
+  text-align: right;
+  border-radius: 5px;
+  border: none;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  font-size: 20px;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  background: #444;
+  color: white;
   cursor: pointer;
-  border-radius: 50%;
+  transition: background 0.3s;
 }
 
-#prevBtn {
-  left: 10px;
+button:hover {
+  background: #666;
 }
 
-#nextBtn {
-  right: 10px;
-}
-
-.image-viewer button:hover {
-  background-color: rgba(0,0,0,0.8);
+button.zero {
+  grid-column: span 2;
 }

@@ -1,27 +1,21 @@
+const display = document.getElementById('display');
 
-
-const images = [
-  'images/img1.jpg',
-  'images/img2.jpg',
-  'images/img3.jpg',
-  'images/img4.jpg',
-];
-
-let currentIndex = 0;
-const galleryImage = document.getElementById('galleryImage');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-
-function showImage(index) {
-  galleryImage.src = images[index];
+function appendValue(val) {
+  display.value += val;
 }
 
-prevBtn.addEventListener('click', () => {
-  currentIndex = (currentIndex - 1 + images.length) % images.length;
-  showImage(currentIndex);
-});
+function clearDisplay() {
+  display.value = '';
+}
 
-nextBtn.addEventListener('click', () => {
-  currentIndex = (currentIndex + 1) % images.length;
-  showImage(currentIndex);
-});
+function deleteLast() {
+  display.value = display.value.slice(0, -1);
+}
+
+function calculate() {
+  try {
+    display.value = eval(display.value);
+  } catch {
+    display.value = 'Error';
+  }
+}
